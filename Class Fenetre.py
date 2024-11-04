@@ -9,7 +9,10 @@ Hauteur = 600
 class Fenetre():
     #initialisation
     def __init__(self, Space_invaders):
-        self.image = PhotoImage(file = 'tp4_image.png')  
+        self.image = PhotoImage(file = 'tp4_image.png')
+        self.scale_w = 3
+        self.scale_h = 3
+        self.image = self.image.subsample(self.scale_w, self.scale_h) 
         self.canvas = Canvas(Space_invaders, width = Largeur, height = Hauteur)
         self.canvas.pack(padx = 10, pady = 10)
         self.canvas.create_image(0, 0, anchor = 'nw', image = self.image)
