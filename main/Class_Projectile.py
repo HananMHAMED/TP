@@ -18,9 +18,11 @@ Class projectile : constituant les principales fonctions du tires
 class projectile():
     def __init__(self, fenetre, x, y):
         self.fenetre = fenetre
+        offset_y = -20
+        y += offset_y
         # création d'un projectile (line)
-        self.id = self.fenetre.canvas.crate_line(x, y, x + 5, y + 10, fill = 'red')
-        self.y_speed = -2
+        self.id = self.fenetre.canvas.create_rectangle(x, y, x + 5, y + 10, fill = 'red')
+        self.y_speed = -10
         
     def move_proj(self):
         # fonction qui gére le mouvement des projectiles
