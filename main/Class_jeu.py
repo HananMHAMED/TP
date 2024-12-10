@@ -41,7 +41,6 @@ class Jeu():
         self.create_aliens()
         self.move_aliens()
         self.create_protection()
-        self.move_protections()
         self.game_loop()
         
         
@@ -77,13 +76,6 @@ class Jeu():
             prot = protection(self.fenetre, 50 + i*100, 300)
             self.protections.append(prot)
             
-    def move_protections(self):
-        # Fonction qui gére les mouvements des aliens
-        # en entrée : vide 
-        # en sortie : vide
-        for prot in self.protections:
-            prot.move_Protection()
-    
         
     def fire_projectile(self, event):
         # création de l'évenement event sur une touche de clavier
@@ -95,7 +87,6 @@ class Jeu():
         
     def game_loop(self):
         self.move_aliens()
-        self.move_protections()
         for proj in self.projectiles:
             proj.move_proj()
             x, y, _, _, = proj.get_position()
