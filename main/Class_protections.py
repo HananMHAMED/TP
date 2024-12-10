@@ -21,13 +21,5 @@ class protection():
   def draw(self):
     self.id = self.fenetre.canvas.create_rectangle(self.x, self.y, self.x + 50, self.y + 50, fill = self.color)
   
-  def move_Protection (self):
-      # Fonction génerant le déplacement d'un alien 
-      # entrée : vide
-      # sortie : vide
-      self.fenetre.canvas.move(self.id, self.x_speed, 0)
-      pos = self.fenetre.canvas.coords(self.id)
-      if pos[0] >= 480 or pos[0]<= 0:
-          self.x_speed *= -1
-    
+  
         
