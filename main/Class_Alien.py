@@ -8,6 +8,7 @@
 
 # importation des bibliothéques nécessaires
 from tkinter import *
+from Class_Projectile import projectile
 
 """
   Class Alien :  constituant les principales fonctions relatives aux aliens.
@@ -34,3 +35,8 @@ class Alien:
 
     def move(self, x_speed, y_offset):
         self.fenetre.canvas.move(self.id, x_speed, y_offset)
+
+
+  def Tire_Alien(self):
+      x, y = self.fenetre.canvas.coords(self.id)
+      proj = projectile(self.fenetre, x, y)
