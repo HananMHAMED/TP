@@ -22,7 +22,11 @@ class Vaisseau():
         self.image_vaisseau = PhotoImage(file = 'joueur.gif')
         self.vaisseau_id = self.jeu.fenetre.canvas.create_image(self.posx, self.posy, anchor = 'center',image = self.image_vaisseau)
         # Lancement du déplacement du vaisseau
-        self.jeu.fenetre.Space_invaders.bind('<Key>', self.deplacer_vaisseau)
+        self.jeu.fenetre.Space_invaders.bind('<Key>', self.callback)
+
+    def callback(self, event):
+        self.deplacer_vaisseau(event)
+        self.jeu.fire_projectile(event)
     
     def deplacer_vaisseau(self, event):
         

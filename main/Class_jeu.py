@@ -16,7 +16,7 @@ from Class_Projectile import projectile
   et sa gestion 
   
 """
-class jeu():
+class Jeu():
     
     # Initialisation
     def __init__(self, fenetre):
@@ -28,7 +28,8 @@ class jeu():
         self.aliens = []   # Initialisation de liste des aliens 
         self.protections = []   # liste de protections de vaisseau
         self.projectiles = []   # File de projectiles
-        self.fenetre.Space_invaders.bind('<KeyPress>', self.fire_projectile)
+        self.x_speed = 1
+        self.y_offset = 0
         
         
     def start_game(self):
@@ -59,9 +60,16 @@ class jeu():
         # Fonction qui gére les mouvements des aliens
         # en entrée : vide 
         # en sortie : vide
+        self.y_offset = 0
         for alien in self.aliens:
-            alien.move_alien()
-            self.fenetre.Space_invaders.after(500, self.move_aliens)
+            if alien.aux_font():
+                self.x_speed *= -1
+                self.y_offset += 20
+                break
+
+        for alien in self.aliens:
+            alien.move(self.x_speed, self.y_offset)
+
     
             
     def create_protection(self):
@@ -75,25 +83,26 @@ class jeu():
         # en sortie : vide
         for prot in self.protections:
             prot.move_Protection()
-            self.fenetre.Space_invaders.after(1000, self.move_protections)
     
         
     def fire_projectile(self, event):
         # création de l'évenement event sur une touche de clavier
         touche = event.keysym
-        print(touche)
-        x, y, _, _, = self.fenetre.canvas.coords(self.vaisseau)
-        proj = projectile(self.fenetre, x + 20, y)
+        if not touche == "space": return
+        x, y = self.fenetre.canvas.coords(self.vaisseau.vaisseau_id)
+        proj = projectile(self.fenetre, x, y)
         self.projectiles.append(proj)
         
     def game_loop(self):
+        self.move_aliens()
+        self.move_protections()
         for proj in self.projectiles:
             proj.move_proj()
             x, y, _, _, = proj.get_position()
             if y <= 0:
                 self.fenetre.canvas.delete(proj.id)
                 self.projectiles.remove(proj)
-        self.fenetre.Space_invaders.after(300, self.game_loop)
+        self.fenetre.Space_invaders.after(30, self.game_loop)
             
         
     

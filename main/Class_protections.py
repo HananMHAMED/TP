@@ -27,7 +27,7 @@ class protection():
       # sortie : vide
       self.fenetre.canvas.move(self.id, self.x_speed, 0)
       pos = self.fenetre.canvas.coords(self.id)
-      if pos[1] >= 480 or pos[0]<= 0:
+      if pos[0] >= 480 or pos[0]<= 0:
           self.x_speed *= -1
     
         
