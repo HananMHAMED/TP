@@ -26,6 +26,9 @@ class Fenetre():
         # création du widget label "score"
         self.label = Label(Space_invaders, text = 'score:') 
         self.label.pack(padx = 10, pady = 10, side = 'top')
+        # création du widget bouton (Demarrer)
+        self.bouton = Button(Space_invaders, text = 'Demarrer')
+        self.bouton.pack(padx = 10, pady = 10, side = 'left')
         # création du widget bouton (Bouton New game)
         self.bouton1 = Button(Space_invaders, text = 'New game') 
         self.bouton1.pack(padx = 10, pady = 10, side = 'left')
