@@ -24,13 +24,17 @@ class Jeu():
         self.score = 0  # Initialisation de score
         self.vies = 3   # nombre de vie de vaisseau
         # création du widget bouton (Bouton New game)
-        self.fenetre.bouton1.config(text = 'Demarrer', command = self.start_game)
+        self.fenetre.bouton1.config(text = 'Demarrer', command = self.bouton)
         self.aliens = []   # Initialisation de liste des aliens 
         self.protections = []   # liste de protections de vaisseau
         self.projectiles = []   # File de projectiles
+        self.projectiles_alien= []
         self.x_speed = 1
         self.y_offset = 0
-        
+
+    def bouton(self):
+        print(self.start_game)
+        self.fenetre.bouton1.config(state = "disabled")
         
     def start_game(self):
         # fonction qui met en place le lancement du jeu
@@ -84,7 +88,23 @@ class Jeu():
         x, y = self.fenetre.canvas.coords(self.vaisseau.vaisseau_id)
         proj = projectile(self.fenetre, x, y)
         self.projectiles.append(proj)
-        
+
+    def check_collision(self, projec, alien):
+        for alien in self.aliens:
+            x1, x2, x3, x4 = alien.get_coords()
+            px1, px2, px3, px4 = projec.get_coords()
+            if  x1 < px3 and x3 > px1 and x2 < px4 and  x4 > px2: 
+                self.aliens.remove(alien)
+                self.fenetre.canvas.delete(alien.image)
+                return True
+        return False   
+     
+    def tire_alien(self, proj):
+        self.proj = proj
+        self.proj.Tire_Alien(self)
+        self.projectiles_alien.append(proj)
+        self.fenetre.Space_invaders.after(30, self.tire_alien )
+      
     def game_loop(self):
         self.move_aliens()
         for proj in self.projectiles:
