@@ -16,17 +16,26 @@ class Vaisseau():
         self.jeu = jeu
         self.fenetre = fenetre
         # Position du vaisseau
+        self.vie = 3
         self.posx = 240
         self.posy = 450
+        self.lon = 32
+        self.lar = 30
+        self.offset0 = -20
+        self.offset1 = -18
         # Création du vaisseau (image)
         self.image_vaisseau = PhotoImage(file = 'joueur.gif')
-        self.vaisseau_id = self.jeu.fenetre.canvas.create_image(self.posx, self.posy, anchor = 'center',image = self.image_vaisseau)
+        self.vaisseau_id = self.fenetre.canvas.create_image(self.posx, self.posy, anchor = 'center',image = self.image_vaisseau)
+        self.rect_id = self.fenetre.canvas.create_rectangle(self.posx + self.offset0, self.posy + self.offset0, self.posx + self.lon + self.offset1, self.posy + self.lar + self.offset1)
         # Lancement du déplacement du vaisseau
-        self.jeu.fenetre.Space_invaders.bind('<Key>', self.callback)
+        self.fenetre.Space_invaders.bind('<Key>', self.callback)
 
     def callback(self, event):
         self.deplacer_vaisseau(event)
         self.jeu.fire_projectile(event)
+
+    def get_position(self):
+        return self.fenetre.canvas.coords(self.rect_id)
     
     def deplacer_vaisseau(self, event):
         
@@ -44,6 +53,8 @@ class Vaisseau():
             if self.posx < 10:
                 self.posx = 10
         # deplacement
-        self.jeu.fenetre.canvas.coords(self.vaisseau_id, self.posx, self.posy)
+        prev_x, prev_y = self.posx, self.posy
+        self.fenetre.canvas.coords(self.vaisseau_id, self.posx, self.posy)
+        self.fenetre.canvas.coords(self.rect_id, self.posx + self.offset0, self.posy + self.offset0, self.posx + self.lon + self.offset1, self.posy + self.lar + self.offset1)
 
       

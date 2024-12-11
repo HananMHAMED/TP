@@ -24,7 +24,7 @@ class Fenetre():
         self.canvas.pack(padx = 10, pady = 10)
         self.canvas.create_image(0, 0, anchor = 'nw', image = self.image)
         # création du widget label "score"
-        self.label = Label(Space_invaders, text = 'score:') 
+        self.label = Label(Space_invaders, text = 'score: 0') 
         self.label.pack(padx = 10, pady = 10, side = 'top')
         # création du widget bouton (Demarrer)
         self.bouton = Button(Space_invaders, text = 'Demarrer')
