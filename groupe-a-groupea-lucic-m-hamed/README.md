@@ -1,0 +1,5 @@
+- Projet de création de site web réalisé en TLW par M'HAMED Hanan et Lucic Arthus.
+- Partie effectuée par M'HAMED Hanan : page reservation, confirm.comm, Contact, footer, header, style.css, fonction supprimer du javascript pour le bouton rémise à zéro, fonction calcule_Prix_total et filter Fonction de filtrage + Fonction pour réinitialiser les filtres et réafficher toutes les destinations
+- Partie effectuée par Lucic Arthus :
+- Pourcentage de travail
+- API
