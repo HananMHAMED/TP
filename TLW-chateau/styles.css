@@ -1,0 +1,86 @@
+
+body, h1, h2, p, div, section {
+    font-family: Garamond;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 50vh;
+}
+
+#accueil {
+    background-image: url("images//accueil.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #efefef;
+
+}
+
+#actualites {
+    background-image: url("images//actu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+
+h1, h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.3em;
+    letter-spacing: 2px;
+}
+
+#decouvrir p {
+    max-width: 700px;
+    text-align: justify;
+    margin: auto;
+}
+nav {
+    display: flex;
+    text-align: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+nav li {
+    min-width: 300px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #887c7c;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: Effra, Raleway, Calibri, Helwetica, Arial, Helvetica, sans-serif;
+
+}
+
+span.nav-legend {
+    opacity: 0;
+    font-style: italic;
+    color: crimson;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    display: block;
+
+}
+ nav a:hover {
+    color: #adddba;
+    letter-spacing: .2em;
+    transition: 0.5s all;
+
+ }
+
+ nav a:hover+.nav-legend {
+    opacity: 1;
+    transition: 1s all;
+ }
