@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>MAGIC</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" type="text/javascript" defer></script>
+    </head>
+    <body onload="afficherCartes()">
+        <header>
+            <img src="../images/logo.png" alt="Description de l'image" id="image">
+            <nav>
+                <ul>
+                    <li><a href="">PRODUITS</a></li>
+                    <li><a href=" ">REGARDER</a></li>
+                    <li><a href=" ">JOUER</a></li>
+                    <li><a href=" ">HISTOIRE</a></li>
+                    <li><a href=" ">ARTICLES</a></li>
+                </ul>
+            </nav>  
+        </header>
+
+        <main>
+            <img src="../images/LTR.webp" alt="Description de l'image" id="LTR">
+            <div id="grid-container"></div>
+        </main>
+            
+        <template id="card-template">
+            <div class="card">
+                <img class="card-img">
+                <p>{{texte}}</p>
+                <div class="mana-cost"></div>
+            </div>
+        </template>
+    </body>
+</html>
