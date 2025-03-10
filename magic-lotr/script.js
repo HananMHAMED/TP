@@ -6,7 +6,6 @@ async function afficherCartes() {
     const baseUrl = "https://api.scryfall.com/cards/search?q=e%3Altr+lang%3Afr&format=json&order=set&unique=prints";
     let cartes = [];
     let nextPageUrl = baseUrl; // La première page
-    
 
     while (nextPageUrl) {
         try {
@@ -28,70 +27,58 @@ async function afficherCartes() {
     // Afficher la taille du tableau des cartes dans la console
     console.log("Nombre total de cartes récupérées:", cartes.length);
 
-    // Récupération des symboles de mana
-    const symbols = await getSymbols();
+    const symbolsDict = await getSymbols();
+    const grid_container = document.querySelector("#grid-container");
+    const template = document.querySelector("#card-template");
+    for(const carte of cartes) { // itère sur le tableau
+        let url_img = carte.image_uris.normal;
+        let text = carte.printed_name;
+        let manaSymbols = parseMana(carte.mana_cost); 
+        let clone = document.importNode(template.content, true);      // clone le template
+        clone.firstElementChild.querySelector("img").src = url_img
+        newContent= clone.firstElementChild.innerHTML
+        .replace(/{{texte}}/g, text);
+        clone.firstElementChild.innerHTML= newContent;
+        
+        // Sélection du conteneur existant pour les symboles de mana
+        let manaContainer = clone.querySelector(".mana-cost");
+        // Ajout des images de symboles de mana
+        for (let i = 0; i < manaSymbols.length; i++) {
+            let symbol = manaSymbols[i];
+            if (symbolsDict[symbol]) {
+                let img = document.createElement("img");
+                img.src = symbolsDict[symbol];
+                img.classList.add("mana"); // Ajout de la classe CSS
+                manaContainer.appendChild(img);
+            }
+        }
 
-    // Appel de la fonction pour afficher les cartes dans le HTML
-    afficherCartesHTML(cartes, symbols);
+        grid_container.appendChild(clone); // On ajoute le clone créé
+    }
 }
 
-async function getSymbols() {
+async function getSymbols(){
     const url = "https://api.scryfall.com/symbology";
     const response = await fetch(url);
     const data = await response.json();
-    
-    // Créer un dictionnaire pour associer les symboles aux URL des images
+
     const symbolsDict = {};
-    data.data.forEach(symbol => {
-        symbolsDict[symbol.symbol] = symbol.svg_uri;
-    });
-    
+    for (let i = 0; i < data.data.length; i++) {
+        let symbolObj = data.data[i];
+        symbolsDict[symbolObj.symbol] = symbolObj.svg_uri;
+    }
+
     return symbolsDict;
 }
 
-
-function afficherCartesHTML(cartes, symbols) {
-    // Récupérer le conteneur de la grille
-    const gridContainer = document.getElementById("grid-container");
-    
-    // Récupérer le template HTML pour les cartes
-    const cardTemplate = document.getElementById("card-template");
-
-    // Parcourir toutes les cartes et les afficher
-    cartes.forEach(carte => {
-        // Cloner le template
-        const cardClone = cardTemplate.content.cloneNode(true);
-
-        // Ajouter l'image de la carte
-        const cardImg = cardClone.querySelector(".card-img");
-        if (carte.image_uris && carte.image_uris.normal) {
-            cardImg.src = carte.image_uris.normal;
-        }
-
-        // Ajouter le titre de la carte
-        const cardTitle = cardClone.querySelector("p");
-        if (carte.printed_name) {
-            cardTitle.textContent = carte.printed_name;
-        }
-
-        const manaCostContainer = cardClone.querySelector(".mana-cost");
-        if (carte.mana_cost) {
-            const manaSymbols = parseMana(carte.mana_cost);
-            manaSymbols.forEach(symbol => {
-                const symbolImg = document.createElement("img");
-                symbolImg.src = symbols[symbol] || "";
-                symbolImg.className = "mana";
-                manaCostContainer.appendChild(symbolImg);
-            });
-        }
-
-        // Ajouter la carte clonée au grid-container
-        gridContainer.appendChild(cardClone);
-    });
-}
+document.addEventListener("scroll", function() {
+    document.querySelector("header").style.position = "fixed";
+});
 
 
-
+document.addEventListener("scroll", function() {
+    document.body.style.backgroundPositionY = -document.documentElement.scrollTop * 0.5 + "px";
+});
 
 
 
