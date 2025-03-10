@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>E_Commerce</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <!-- ECRIVEZ VOTRE CODE EN DESSOUS DE CETTE LIGNE -->
+    <div id="site-header">
+        <header>
+            <a href=""><img src="../images/logo.png" alt="Description de l'image" id="img"></a>
+            <input type="search" id ="search-input" placeholder="chercher un produit">
+            <nav>
+                <ul>
+                    <li><a href="">Accueil</a></li>
+                    <li><a href=" ">Nutrition</a></li>
+                    <li><a href=" ">Scores</a></li>
+                    <li><a href=" ">A propos</a></li>
+                </ul>
+            </nav>  
+        </header>
+    </div>
+
+    <main>
+        <div id="grid-container"></div>
+    </main>
+
+    <!-- ECRIVEZ VOTRE CODE AU-DESSUS DE CETTE LIGNE -->
+
+    <template id="card-template">
+        <div class="card">
+            <div class="card-img">
+                <img src="" class="image">
+            </div>
+            <p>{{nom}}</p>
+            <div>
+                <img src="" alt="Nutri-score" class="img_score nutriscore">
+                <img src="" alt="Groupe NOVA" class="img_score nova-group">
+                <img src="" alt="Eco-score" class="img_score ecoscore">
+            </div>
+        </div>
+    </template>
+</body>
+</html>
