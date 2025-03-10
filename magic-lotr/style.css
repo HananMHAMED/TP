@@ -109,3 +109,9 @@ main {
     width: 15px;
    
 }
+
+.mana {
+    width: 15px;
+    height: 15px;
+    margin-right: 2px;
+}
