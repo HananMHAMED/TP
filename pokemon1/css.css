@@ -1,0 +1,127 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les paddings par défaut */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur des éléments */
+    font-family: 'Lato', sans-serif; /* Définit la police globale */
+    font-size: 14px;
+}
+
+/* Conteneur principal de l'en-tête */
+#site-header {
+    display: flex; /* Active Flexbox pour l'alignement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    background-color: #ef5350; /* Définit la couleur de fond */
+    padding: 10px 0; /* Ajoute un padding en haut et en bas */
+}
+
+/* En-tête */
+header {
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: space-between; /* Répartit les éléments avec un espace entre eux */
+    width: 75%; /* Limite la largeur de l'en-tête */
+    max-width: 1200px; /* Empêche l'en-tête d'être trop large sur grands écrans */
+    height: 50px; /* Définit une hauteur fixe */
+}
+
+/* Logo */
+header img {
+    width: 110px; /* Définit une largeur fixe pour le logo */
+}
+
+/* Barre de navigation */
+nav {
+    display: flex; /* Active Flexbox pour organiser les liens */
+    align-items: center; /* Centre verticalement les liens */
+}
+
+nav ul {
+    display: flex; /* Affiche les éléments de la liste sur une seule ligne */
+    list-style: none; /* Supprime les puces de la liste */
+}
+
+nav ul li {
+    margin: 0 1em; /* Ajoute un espacement horizontal entre les éléments */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; /* Définit la couleur du texte en blanc */
+    padding: 0 1em; /* Ajoute un padding horizontal pour espacer les liens */
+}
+
+/* Zone principale */
+main {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre horizontalement les éléments */
+    justify-content: center; /* Centre verticalement les éléments */
+    margin-top: 20px; /* Ajoute un espace au-dessus du contenu */
+}
+
+/* Bouton */
+button {
+    background-color: #ef5350; /* Définit la couleur de fond */
+    border: none; /* Supprime la bordure */
+    border-radius: 5px; /* Arrondit les bords du bouton */
+    margin: 15px; /* Ajoute une marge autour du bouton */
+    padding: 12px; /* Définit l'espacement interne du bouton */
+    color: white; /* Définit la couleur du texte */
+    font-weight: 700; /* Rend le texte en gras */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+/* Conteneur de la grille */
+#grid-container {
+    display: grid; /* Active la mise en page en grille */
+    grid-template-columns: repeat(4, 1fr); /* Crée une grille avec 4 colonnes égales */
+    gap: 15px; /* Ajoute un espacement entre les cellules */
+    width: 75%; /* Limite la largeur du conteneur */
+    margin: auto; /* Centre le conteneur horizontalement */
+}
+/*div>header>nav>img>a*4*/
+
+/*on peut met les tout en bordure just pour voir clairement les deplacement des balises*/
+
+/* async function afficher() {
+    // Récupérer le bouton et le masquer
+    const button = document.querySelector('button');
+    button.style.display = 'none';
+    
+    // Récupérer le conteneur de la grille
+    const gridContainer = document.getElementById('grid-container');
+    
+    // Récupérer le template
+    const template = document.getElementById('card-template');
+    
+    // Créer 100 copies du template
+    for (let i = 0; i < 100; i++) {
+        const clone = template.content.cloneNode(true);
+
+        // Sélectionner l'image dans le clone
+        const img = clone.querySelector('.card-img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i + 1}.svg`;
+        img.alt = `Image du Pokémon ${i}`;
+        
+        // Sélectionner et mettre à jour le numéro du Pokémon
+        const numero = clone.querySelector('p:nth-of-type(2)');
+        numero.textContent = `#${i + 1} `;
+
+        // Sélectionner l'élément où afficher le nom du Pokémon
+        const nom = clone.querySelector('p:nth-of-type(1)');
+
+        // Récupérer le nom français du Pokémon via l'API
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i + 1}/`);
+            const data = await response.json();
+            nom.textContent = data.names[4].name; // La 5ème langue du tableau est le français
+        } catch (error) {
+            console.error(`Erreur lors de la récupération du nom du Pokémon ${i}:`, error);
+            nom.textContent = "Nom inconnu"; // Valeur par défaut en cas d'erreur
+        }
+
+        // Ajouter le clone au conteneur
+        gridContainer.appendChild(clone);
+    }
+} */

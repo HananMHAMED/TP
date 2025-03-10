@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+.card-img {
+    margin: 10px 0;
+    height: 120PX;
+    width: 100%;
+}
+
+.card {
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    border-radius: 5px;
+}
+
+#site-header {
+    background-color: #ef5350;
+    padding: 10px 0;
+    width: 100%;
+}
+
+header{
+    align-items: center;
+    height: 50px;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+}
+nav {
+    display: flex;              /* Utilise Flexbox pour la disposition */  
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#img {
+    width: 110px;
+}
+
+main {     
+    text-align: center; /* Centre horizontalement les éléments */
+    margin-top: 20px; /* Ajoute un espace au-dessus du contenu */
+}
+
+button {
+    background-color: #ef5350; /* Définit la couleur de fond */
+    border: none; /* Supprime la bordure */
+    border-radius: 5px; /* Arrondit les bords du bouton */
+    margin: 15px; /* Ajoute une marge autour du bouton */
+    padding: 12px; /* Définit l'espacement interne du bouton */
+    color: white; /* Définit la couleur du texte */
+    font-weight: 700; /* Rend le texte en gras */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+#grid-container {
+    display: grid; /* Active la mise en page en grille */
+    grid-template-columns: repeat(4, 1fr); /* Crée une grille avec 4 colonnes égales */
+    gap: 15px; /* Ajoute un espacement entre les cellules */
+    width: 75%; /* Limite la largeur du conteneur */
+    margin: auto; /* Centre le conteneur horizontalement */
+}
+
