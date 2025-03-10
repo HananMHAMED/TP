@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>site web</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+        <!-- Barre de navigation à compléter -->
+            <li>
+                <a href="#decouvrir">Découvrir</a>
+                <p class="additional">L'histoire du Château</p>
+            </li>
+            <li>
+                <a href="#actu">Actualités</a>
+                <p class="additional">Expositions</p>
+            </li>
+            <li>
+                <a href="#visites">Visites</a>
+                <p class="additional">Informations pratiques</p>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Insérer le code HTML de la page *en-dessous* de cette ligne -->
+
+    <section id="accueil" class="page">
+        <h1>Château de Moulinsart</h1>
+    </section>
+
+    <section id="decouvrir" class="page">
+        <h1>Découvrir</h1>
+    </section>
+
+    <section id="actu" class="page">
+        <h1>Actualités</h1>
+        <div id ="grid-container"></div>
+    </section>
+
+    <section id="visites" class="page">
+        <h1>visites</h1>
+        <div id="contenu-visites">
+            <ul>
+                <li>
+                    <p>Le Château est ouvert tous les jours sauf le lundi, de 9h à 18h.</p>
+                </li>
+                <li>
+                    <p>
+                        Ouverts tous les jours, le Parc et les jardins sont gratuits <br>
+                        les jours de Grandes Eaux, accès aux Jardins payant</p>
+                </li>
+                <li>
+                    <address>
+                        Château de Moulinsart<br>
+                        Boulevard Hergé<br>
+                        01234 Moulinsart<br>
+                        <a href="mailto:contact@exemple.com">contact@exemple.com</a><br>
+                        <a href="tel:+33123456789">+33 1 23 45 67 89</a><br>
+                    </address>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Insérer le code HTML de la page *au-dessus* de cette ligne -->
+    
+    <template id="my_template">
+        <div class="grid-item">
+            <img src="images/{{actu-image}}.jpg">
+            <div class="inner">
+                <h2>{{actu-titre}}</h2>
+                <p>
+                    {{actu-texte}}
+                </p>
+                <a>{{actu-bouton}}</a>
+            </div>
+        </div>
+    </template>
+    <button onclick="topFunction()" id="myBtn">▲</button>
+</body>
+
+</html>
