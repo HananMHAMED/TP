@@ -13,3 +13,20 @@ function ecrireCartes() {
         }
     })
 }
+
+async function getUsers() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+        if (!response.ok) { 
+            throw new Error("Erreur HTTP : " + response.status);
+        }
+
+        let users = await response.json();
+        console.log(users);
+    } catch (error) {
+        console.error("Une erreur est survenue :", error.message);
+    }
+}
+
+getUsers();
