@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar à cocktails </title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <div id="site-header">
+        <header>
+            <p id="nom-bar">🍸 Le Shaker Bar</p>
+            <nav>
+                <ul>
+                    <li><a href="">Accueil</a></li>
+                    <li><a href=" ">Cocktails</a></li>
+                    <li><a href=" ">A propos</a></li>
+                </ul>
+            </nav>  
+        </header>
+    </div>
+
+    <main>
+        <section id="cocktail-Signature">
+            <h1>🍸 Nos cocktails "Signature"🍸</h1>
+            <div id="cocktail">
+                <table>
+                    <tr>
+                        <th>
+                            <img src="../images/cranberry_punch.jpg" alt="cranberry_punch" id="img">
+                            <h2>cranberry_punch</h2> 
+                            <p>alcoolisé</p>
+                        </th>
+                        <th>
+                            <img src="../images/daiquiri.jpg" alt="daiquiri" id="img">
+                            <h2>daiquir</h2>
+                            <p>alcoolisé</p></th>
+                        <th>
+                            <img src="../images/margarita.jpg" alt="margarita" id="img">
+                            <h2>margarita</h2>
+                            <p>alcoolisé</p>
+                        </th>
+                        <th>
+                            <img src="../images/mojito.jpg" alt="mojito" id="img">
+                            <h2>mojito</h2>
+                            <p>sans alcool</p>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id ="cocktail-Explorer">
+            <h1>En manque d'inspiration ? Essayer notre"Cocktail Exploreer"! </h1>
+            <input type="search" id ="search-input" placeholder="Rechercher un cocktail...">
+            <div id="grid-container">
+
+            </div>
+        </section>
+    </main>
+
+    <template id="card-template">
+        <div class="card">
+            <div>
+                <img src=""class="card-img">
+            </div>
+            <h2>{{nom}}</h2>
+            <p>{{info}}</p>
+            <p>{{alcool}}</p>
+            <p>{{desc}}</p>
+        </div>
+    </template>
+</body>
+</html>
