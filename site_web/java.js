@@ -132,3 +132,31 @@ function updatetotal() {
 
 
 }
+ .replace(/{{}}/, Object.values(cocktail).slice(17, 32).filter(i => i).join(", "));
+
+var filterValue = document.getElementById("search-input").value.trim(); 
+    const url_carts = ``;
+    const reponse = await fetch(url_carts);
+    const data = await reponse.json();
+    console.log(data);
+    return data.data
+
+
+ const grid_container = document.querySelector("#grid-container");
+    grid_container.innerHTML = ""; 
+
+    const template = document.querySelector("#card-template");
+    const data = await affichercarte();
+    for (const a of data) {					// itère sur le tableau
+        let clone = document.importNode(template.content, true);      // clone le template
+        let newContent = clone.firstElementChild.innerHTML		// remplace {{modèle}}
+            .replace(/{{nom}}/g, a.str)				// et {{couleur}} par
+            .replace(/{{info}}/g,)			// leur valeur
+            .replace(/{{}}/g, )
+        clone.firstElementChild.innerHTML = newContent;		
+        clone.querySelector(".card-img").src = cocktail.strDrinkThumb || "placeholder.jpg";
+        document.getElementById("grid-container").appendChild(clone);				// On ajoute le clone créé
+    }
+
+// Ajouter un écouteur d'événements pour rechercher dynamiquement
+document.getElementById("search-input").addEventListener("input", affichercart);
