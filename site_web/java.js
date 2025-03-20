@@ -132,7 +132,7 @@ function updatetotal() {
 
 
 }
- .replace(/{{}}/, Object.values(cocktail).slice(17, 32).filter(i => i).join(", "));
+ .replace(/{{}}/, Object.values().slice(17, 32).filter(i => i).join(", "));
 
 var filterValue = document.getElementById("search-input").value.trim(); 
     const url_carts = ``;
@@ -154,7 +154,7 @@ var filterValue = document.getElementById("search-input").value.trim();
             .replace(/{{info}}/g,)			// leur valeur
             .replace(/{{}}/g, )
         clone.firstElementChild.innerHTML = newContent;		
-        clone.querySelector(".card-img").src = cocktail.strDrinkThumb || "placeholder.jpg";
+        clone.querySelector(".card-img").src = a.strimg || "photo.npg";
         document.getElementById("grid-container").appendChild(clone);				// On ajoute le clone créé
     }
 
