@@ -1,0 +1,162 @@
+[
+    {
+        "user_id": "fan_nature",
+        "favorite_colors": [
+            "gris",
+            "noir",
+            "blanc"
+        ],
+        "favorite_orientation": "paysage",
+        "favorite_size": "moyenne",
+        "favorite_tags": [
+            "photo",
+            "paysage",
+            "portrait"
+        ],
+        "favorite_images": [
+            "image_36314388.jpg",
+            "image_36326547.jpg",
+            "image_36332356.jpg",
+            "image_968705.jpg",
+            "image_32800594.jpg",
+            "image_5714255.jpg",
+            "image_33092680.jpg",
+            "image_12299118.jpg",
+            "image_3358880.jpg",
+            "image_36377089.jpg",
+            "image_161913.jpg",
+            "image_9088004.jpg",
+            "image_36376343.jpg",
+            "image_30097303.jpg",
+            "image_3068788.jpg"
+        ]
+    },
+    {
+        "user_id": "archi_lover",
+        "favorite_colors": [
+            "gris",
+            "blanc",
+            "noir"
+        ],
+        "favorite_orientation": "paysage",
+        "favorite_size": "moyenne",
+        "favorite_tags": [
+            "photo",
+            "paysage",
+            "portrait"
+        ],
+        "favorite_images": [
+            "image_13920396.jpg",
+            "image_36340218.jpg",
+            "image_32707511.jpg",
+            "image_248207.jpg",
+            "image_18843716.jpg",
+            "image_18864442.jpg",
+            "image_36325130.jpg",
+            "image_36336681.jpg",
+            "image_1590882.jpg",
+            "image_4066422.jpg",
+            "image_36343036.jpg",
+            "image_1081912.jpg",
+            "image_772474.jpg",
+            "image_280173.jpg",
+            "image_28305361.jpg"
+        ]
+    },
+    {
+        "user_id": "minimaliste",
+        "favorite_colors": [
+            "gris",
+            "noir",
+            "blanc"
+        ],
+        "favorite_orientation": "paysage",
+        "favorite_size": "moyenne",
+        "favorite_tags": [
+            "photo",
+            "paysage",
+            "portrait"
+        ],
+        "favorite_images": [
+            "image_36367143.jpg",
+            "image_34281575.jpg",
+            "image_13222849.jpg",
+            "image_30682770.jpg",
+            "image_36318891.jpg",
+            "image_28523514.jpg",
+            "image_36338183.jpg",
+            "image_6314284.jpg",
+            "image_36344394.jpg",
+            "image_36344390.jpg",
+            "image_36343036.jpg",
+            "image_6810421.jpg",
+            "image_6727052.jpg",
+            "image_36331383.jpg",
+            "image_36336813.jpg"
+        ]
+    },
+    {
+        "user_id": "color_addict",
+        "favorite_colors": [
+            "gris",
+            "noir",
+            "blanc"
+        ],
+        "favorite_orientation": "portrait",
+        "favorite_size": "moyenne",
+        "favorite_tags": [
+            "photo",
+            "portrait",
+            "paysage"
+        ],
+        "favorite_images": [
+            "image_7962980.jpg",
+            "image_4995580.jpg",
+            "image_36343036.jpg",
+            "image_6810421.jpg",
+            "image_35176066.jpg",
+            "image_772474.jpg",
+            "image_33092680.jpg",
+            "image_36318891.jpg",
+            "image_28523509.jpg",
+            "image_36326547.jpg",
+            "image_36336681.jpg",
+            "image_36332356.jpg",
+            "image_36331439.jpg",
+            "image_3113867.jpg",
+            "image_36331383.jpg"
+        ]
+    },
+    {
+        "user_id": "street_photog",
+        "favorite_colors": [
+            "gris",
+            "noir",
+            "blanc"
+        ],
+        "favorite_orientation": "portrait",
+        "favorite_size": "moyenne",
+        "favorite_tags": [
+            "photo",
+            "portrait",
+            "paysage"
+        ],
+        "favorite_images": [
+            "image_28523514.jpg",
+            "image_36314388.jpg",
+            "image_140021.jpg",
+            "image_2832085.jpg",
+            "image_36326548.jpg",
+            "image_9306219.jpg",
+            "image_32707511.jpg",
+            "image_5213084.jpg",
+            "image_36331426.jpg",
+            "image_36325130.jpg",
+            "image_9088004.jpg",
+            "image_3113867.jpg",
+            "image_1081912.jpg",
+            "image_36376343.jpg",
+            "image_30097303.jpg"
+        ]
+    }
+]
