@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail : {{ patho.desc|default('Inconnue') }}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+{# --- INCLUSION DU HEADER --- #}
+{% include 'header.html.twig' %}
+
+<div class="container">
+    <a href="index.php" class="btn-back">← Retour à la liste</a>
+
+    {% if patho %}
+        <section id="detail" class="detail-card">
+            <h1>{{ patho.desc }}</h1>
+            <div class="info-box">
+                <p><strong>Méridien :</strong> {{ patho.nom_meridien }}</p> 
+                <p><strong>Type :</strong> {{ patho.type }}</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Symptômes associés</h3>
+            <div id="symptomeList" class="grid">
+                {% for symptome in symptomes %}
+                    <div class="card symptome">
+                        <p>{{ symptome.symptome_desc }}</p>
+                    </div>
+                {% else %}
+                    <p class="empty">Aucun symptôme répertorié pour cette pathologie.</p>
+                {% endfor %}
+            </div>
+        </section>
+    {% else %}
+        <div class="error-box">
+            <p>Pathologie non trouvée.</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

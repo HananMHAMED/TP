@@ -1,0 +1,15 @@
+<div class="header">
+    <h2 class="logo">Acupuncture App</h2>
+
+    <div id="authArea">
+        {% if user %}
+            {# --- CAS : UTILISATEUR CONNECTÉ --- #}
+            <span class="welcome-msg">Bonjour <strong>{{ user }}</strong></span>
+            <a href="logout.php" class="btn logout">Se déconnecter</a>
+        {% else %}
+            {# --- CAS : VISITEUR ANONYME --- #}
+            <a href="login.php" class="btn">Se connecter</a>
+            <a href="signup.php" class="btn">Créer un compte</a>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>   
+        <meta charset="UTF-8">
+        <title>Confirmation de commande </title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src = "../js/java.js" defer></script>
+        <script src="../js/headerFooter.js" type="text/javascript" defer></script>
+    </head>
+    <body>
+        <header id ="header"></header>
+        <div id="form1">
+            <fieldset>
+                <p>Pour confirmer votre reservation remplir le formulaire suivant:</p>
+                Identite:<br>
+                <input type="text"><br>
+                Adresse postale:<br>
+                <input type="text"><br>
+                Adresse mail:<br>
+                <input type="email"><br>
+                <input type="submit" value="confirmer" id="bouton"><br>
+                <input type="submit" value="Annuler" id="bouton">
+            </fieldset>
+        </div>
+        <div id="form2">
+            <fieldset>
+                <legend>Rechargement Par Carte Bancaire</legend>
+                Nom:
+                <input type="text"><br>
+                Numéro de carte:
+                <input type="text" placeholder="1234 1234 1234 1234"><br>
+                Date d'expiration:
+                <input type="text" placeholder="MM/AA"><br>
+                Code de sécurité:
+                <input type="text" placeholder="CVC">
+            </fieldset>
+        </div>
+        <footer id = "footer"></footer>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Acupuncture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Créer un compte</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if success %}
+        <p style="color: green;">{{ success|raw }}</p>
+    {% else %}
+        <form method="POST" action="signup.php">
+            <input type="text" name="username" placeholder="Choisissez un pseudo" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    {% endif %}
+
+    <br>
+    <a href="login.php">Déjà un compte ? Connectez-vous</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+// panier.js
+
+// Initialiser le panier (stocké dans localStorage)
+const panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+// Fonction pour afficher le contenu du panier
+document.addEventListener("DOMContentLoaded", () => {
+  afficherPanier();
+
+  // Ajouter un gestionnaire pour le bouton "Vider le panier"
+  document
+    .getElementById("vider-panier")
+    .addEventListener("click", viderPanier);
+});
+
+function afficherPanier() {
+  const panierContainer = document.getElementById("contenu-panier");
+  panierContainer.innerHTML = "";
+
+  if (panier.length === 0) {
+    panierContainer.innerHTML = "<p>Votre panier est vide.</p>";
+    return;
+  }
+
+  // Créer une liste des éléments du panier
+  const ul = document.createElement("ul");
+  panier.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+            <strong>${item.destination}</strong> - ${item.dates} - ${item.personnes} personnes - ${item.prix} €
+            <button class="retirer" data-index="${index}">Retirer</button>
+        `;
+    ul.appendChild(li);
+  });
+  panierContainer.appendChild(ul);
+
+  // Ajouter des gestionnaires pour les boutons "Retirer"
+  document.querySelectorAll(".retirer").forEach((button) => {
+    button.addEventListener("click", retirerDuPanier);
+  });
+}
+
+function retirerDuPanier(event) {
+  const index = event.target.dataset.index;
+  panier.splice(index, 1);
+  localStorage.setItem("panier", JSON.stringify(panier));
+  afficherPanier();
+}
+
+function viderPanier() {
+  localStorage.removeItem("panier");
+  while (panier.length) panier.pop();
+  afficherPanier();
+}

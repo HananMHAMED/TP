@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reservation</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/headerFooter.js" type="text/javascript" defer></script>
+    <script src="../js/java.js" type="text/javascript" defer></script>
+    <script src="../js/panier.js" defer></script>
+  </head>
+  <body onload="Flieux(lieux);">
+    <header id="header"></header>
+    <p>Votre destination :</p>
+    <div type="text" id="madest">{{DLieux}}</div>
+    <div id="form1">
+      <fieldset id="delete1" onChange="calcule_Prix_total(dest)">
+        <legend>Veuillez remplir le formulaire</legend>
+        Date de depart:<br />
+        <input type="date" id="1" /><br />
+        Date de retour:<br />
+        <input type="date" id="2" /><br />
+        Nombres d'adultes:{{prix}}<br />
+        <input type="text" id="3" /><br />
+        Nombre d'enfants:<br />
+        <input type="number" name="quantity" min="1" max="12" id="4" /><br />
+        <input type="radio" value="petit déjeuner" id="5" />Petit déjeuner<br />
+        <p>Prix:</p>
+        <div type="text" id="prixTotal"></div>
+        <input type="radio" id="7" />class économy
+        <input type="radio" id="8" />Business class<br />
+      </fieldset>
+    </div>
+
+    <div id="form2">
+      <fieldset id="delete2">
+        <legend>Identité</legend>
+        Nom:
+        <input type="text" id="9" /><br />
+        Prénom:
+        <input type="text" id="10" /><br />
+        Adresse mail:
+        <input type="email" placeholder="nom@exemple.com" id="11" /><br />
+        Numéro de téléphone:
+        <input type="tel" placeholder="0123456789" id="12" /><br />
+      </fieldset>
+    </div>
+
+    <p>
+      <button onclick="supprimer()" id="bouton">rémise à zero</button>
+    </p>
+
+    <form action="Contpanier.html">
+      <button onclick="recup_resa()" id="bouton">Valider</button>
+    </form>
+    <footer id="footer"></footer>
+  </body>
+</html>

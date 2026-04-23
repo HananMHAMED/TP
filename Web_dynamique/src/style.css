@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+}
+
+h1 {
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    background-color: #f0f6ff;
+}
+
+
+a {
+    text-decoration: none;
+    color: #1e2a38;
+    font-weight: bold;
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2a38;
+    color: white;
+    padding: 20px 30px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 22px;
+}
+
+.btn {
+    background-color: #4da6ff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3399ff;
+}
+
+.logout {
+    background-color: #ff4d4d;
+}
+
+/* LOGIN */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+}
+
+#error {
+    color: red;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #4da6ff;
+    font-weight: bold;
+}
+
+/*detail*/
+.detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.info-box {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f6ff;
+    border-radius: 8px;
+}
+
+.symptome {
+    text-align: center;
+}
+
+
+h3 {
+    text-align: center;
+    margin: 0;
+    color: #1e2a38;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+
+}
+

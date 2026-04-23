@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# 1. On n'applique pas la réécriture si le fichier ou le dossier existe vraiment
+# (C'est ce qui permet au navigateur d'accéder au style.css réel)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 2. On envoie tout le reste vers index.php?route=...
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Acupuncture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Connexion</h1>
+
+    {% if error %}
+        <p class="error-message" style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="login.php">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+
+        <div class="actions">
+            <button type="submit">Se connecter</button>
+            <p>Pas encore de compte ? <a href="signup.php">Créer un compte</a></p>
+        </div>
+    </form>
+    
+    <br>
+    <a href="index.php">← Retour à la liste</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "budapest": {
+    "prix": 40,
+    "lieux": "budapest",
+    "enfant": true,
+    "annimaux": false
+  },
+  "cancun": {
+    "prix": 50,
+    "lieux": "cancun",
+    "enfant": true,
+    "annimaux": false
+  },
+  "moscou": {
+    "prix": 60,
+    "lieux": "moscou",
+    "enfant": false,
+    "annimaux": false
+  },
+  "athene": {
+    "prix": 70,
+    "lieux": "athene",
+    "enfant": true,
+    "annimaux": false
+  },
+  "belgrade": {
+    "prix": 70,
+    "lieux": "belgrade",
+    "enfant": true,
+    "annimaux": true
+  },
+  "madrid": {
+    "prix": 70,
+    "lieux": "madrid",
+    "enfant": false,
+    "annimaux": true
+  },
+  "dublin": {
+    "prix": 70,
+    "lieux": "dublin",
+    "enfant": true,
+    "annimaux": true
+  },
+  "wuhan": {
+    "prix": 70,
+    "lieux": "wuhan",
+    "enfant": true,
+    "annimaux": false
+  },
+  "LosAngeles": {
+    "prix": 80,
+    "lieux": "LosAngeles",
+    "enfant": true,
+    "annimaux": false
+  }
+}

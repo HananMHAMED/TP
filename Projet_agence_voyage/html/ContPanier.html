@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>contenu du panier</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/java.js" type="text/javascript" defer></script>
+    <script src="../js/headerFooter.js" type="text/javascript" defer></script>
+    <script src="../js/panier.js" defer></script>
+  </head>
+  <body onload="affiche_resa()">
+    <header id="header"></header>
+    <h3>voici les voyages réservés:</h3>
+    <div class="grid" id="grid2">
+      <p>Date de depart:{{depart}}</p>
+      <p>Date d'arrivé:{{arrive}}</p>
+      <p>Nombre de personne: {{nbrpers}}</p>
+      <p>Prix du voyage: {{prixvoyage}}</p>
+    </div>
+
+    <button onclick="sup_resa()" ,id="bouton">supprimez les voyages</button>
+    <div id="panier"></div>
+    <p>
+      <input type="submit" value="Annuler" id="bouton" />
+    </p>
+    <form action="Confirmcomm.html">
+      <input type="submit" value="confirmer" id="bouton" /><br />
+    </form>
+    <footer id="footer"></footer>
+  </body>
+</html>

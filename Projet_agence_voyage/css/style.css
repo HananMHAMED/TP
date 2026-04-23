@@ -1,0 +1,252 @@
+body {
+    background-size: cover;
+    background-image: url(photo.jpg);
+    background-position: center;
+    font-family:  Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+
+nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+nav li {
+    min-width: 300px;
+}
+nav a {
+    text-decoration: none;
+    color: rgb(203, 202, 213);
+    font-size: 22px;
+    text-transform: unset;
+    font-family: Effra, Raleway, Calibri, Helwetica, Arial, Helvetica, sans-serif;
+}
+
+img {
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px rgb(107, 158, 224) ;
+   
+}
+
+.grid {
+    display: grid;
+    max-width: fit-content;
+    height: auto;
+    margin: 30PX auto;
+    justify-content: center;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto ;
+    padding: 20px;
+}
+.griditem {
+    width: 300px;
+    height: 350px;
+}
+
+.griditem:hover {
+    transform: scale(1.05
+    );
+}
+#form1 {
+    max-width: fit-content;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    margin: 20px;
+}
+
+#form2 {
+    left: 50%;
+    max-width: fit-content;
+    position: absolute;
+    top: 80px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin: 20px;
+}
+ fieldset > * {
+    margin-bottom: 10px;
+ }
+
+ul li a:hover {
+    color: rgb(173, 102, 8);
+    text-decoration: underline;
+}
+
+ img:hover {
+    transform: scaleX(-1);
+ }
+#bouton {
+    border-radius: 20px;
+    padding: 7px 7px;
+    box-shadow: 3px 3px;
+    background-color: rgb(100, 139, 201);
+    color: rgb(162, 172, 172);
+    font-size: 17px;
+    position:  relative;
+}
+
+header {
+    background-color: #171818d7;
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+footer {
+    margin-top: auto;
+    bottom: 0;
+    position: relative;
+    background-color: #121719dc;
+    flex-shrink: 0;
+    border-top: 1px dashed #333;
+    width: 100%;
+    height: 200px;
+
+}
+.contenu-footer { 
+    width: 100%; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    font-size: 13px;
+    color: rgb(199, 215, 215);
+    padding-left: 50px;
+    
+}
+
+.bloc {
+    width: 100%;
+    padding: 10px 20px;
+}
+.div0 {
+    padding-top: 40px;
+}
+
+.footer-horaires h3,
+.footer-medias h3 { 
+    font-size: 14px; 
+    padding-bottom: 1px;
+}  
+
+.liste-horaires,
+.liste-media {
+    list-style-type: none;
+}
+
+.liste-media img { width: 20px;
+    margin: 3px 3px;
+}
+.liste-media a {
+    text-decoration: none;
+    color: #eadfdfe5; display: flex;
+    align-items: center; font-size: 13px;
+}
+
+.wrapper{
+    width: 95%;
+    margin: 0 auto;
+}
+
+#search-container{
+    margin: 1em 0;
+
+}
+#search-container input {
+    width: 40%;
+    border-bottom: 2px solid #333;
+    padding: 1em 0.3em;
+     
+}
+
+#search-container input:focus{
+    border-bottom-color: #6759ff;
+
+}
+
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: #6759ff;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 0.5em;
+}
+
+.button-value{
+    border: 2px solid #2f4a94;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+}
+
+
+/* Media Queries pour rendre le site réactif */
+
+/* Pour les écrans plus petits (tablettes et mobiles) */
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column; /* Liste verticale sur petits écrans */
+    }
+    nav li {
+        min-width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Réduire la taille des colonnes */
+    }
+
+    img {
+        width: 100%; /* Réduire la taille de l'image */
+        margin: 5px;
+    }
+
+    #form1, #form2 {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #search-container input {
+        width: 80%; /* Agrandir la barre de recherche */
+    }
+
+    footer {
+        height: auto; /* Ajuster la taille du footer sur petits écrans */
+    }
+
+    .contenu-footer {
+        padding-left: 20px; /* Réduire le padding sur petits écrans */
+    }
+
+    .wrapper {
+        width: 100%; /* Assurer que le contenu prenne toute la largeur */
+    }
+}
+
+/* Pour les très petits écrans (mobiles) */
+@media (max-width: 480px) {
+    nav ul {
+        padding: 0;
+    }
+    .grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur très petits écrans */
+    }
+    #bouton {
+        width: 100%; /* Bouton plus large sur mobile */
+    }
+} 

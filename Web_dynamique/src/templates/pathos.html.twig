@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pathologies en acupuncture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+{% include 'header.html.twig' %}
+
+
+<h1>Pathologies en acupuncture</h1>
+
+<!-- 🔍 FILTRES -->
+<form method="GET" class="filters">
+
+    {% if user %}
+        <input type="text" name="search" placeholder="Rechercher une pathologie ou symptôme">
+    {% endif %}
+    
+    <select name="filterMeridien">
+        <option value="">Tous les méridiens</option>
+        {% for code_meridien in data_mer_filter %}
+
+            {% set name_meridien = '' %}
+
+            {% for item in data_meridien %}
+                {% if item.code == code_meridien.mer %}
+                    {% set name_meridien = item.nom %}
+                {% endif %}
+            {% endfor %}
+
+            <option value="{{ code_meridien.mer }}">{{ name_meridien }}</option>
+        {% endfor %}
+    </select>
+    
+    <select name="filterType">
+        <option value="">Tous les types</option>
+        {% for item in data_type_filter %}
+            <option value="{{ item.type }}">{{ item.type }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Filtrer</button>
+</form>
+
+<!-- 📋 LISTE -->
+<liste name="pathologyList" class="grid">
+    {% for patho in data_patho %}
+        <article class="card">
+            <a href="index.php?id={{ patho.idp }}">{{ patho.desc }}</a>
+        </article>
+    {% endfor %}
+</liste>
+
+</body>
+</html>

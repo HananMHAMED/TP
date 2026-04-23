@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>projet agence de voyage</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/java.js" type="text/javascript" defer></script>
+    <script src="../js/headerFooter.js" type="text/javascript" defer></script>
+  </head>
+  <body onload="grilleDest(); Flieux(lieux);">
+    <header id="header"></header>
+    <div class = "wrapper">
+      <div id = "search-container">
+        <input type="search" id ="search-input" placeholder="search product prix here..">
+        <button id="search" >Search</button>
+      </div>
+      <div id ="bouton_all">
+        <button class="button-value" id="all">All</button>
+      </div>
+    </div>
+    <div class="grid" id="grid">
+      <template id="ListeDestination">
+        <div class="griditem" data-price="{{prix}}">
+          <h3>{{lieux}},{{temp}}</h3>
+          <a href="reservation.html?id={{lieux}}"
+            ><img
+              src="../images/{{lieux}}.jpg"
+              width="300px"
+              height="300px"
+              loading="lazy"
+          /></a>
+        </div>
+      </template>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+</html>
